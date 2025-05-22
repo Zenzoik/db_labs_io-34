@@ -1,10 +1,3 @@
--- Удаление существующих таблиц (если нужно пересоздать)
--- DROP TABLE IF EXISTS attachments CASCADE;
--- DROP TABLE IF EXISTS comments CASCADE;
--- DROP TABLE IF EXISTS usertasks CASCADE;
--- DROP TABLE IF EXISTS tasks CASCADE;
--- DROP TABLE IF EXISTS projects CASCADE;
--- DROP TABLE IF EXISTS users CASCADE;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -66,7 +59,6 @@ CREATE TABLE attachments (
     FOREIGN KEY (task_id) REFERENCES tasks(id) ON DELETE CASCADE
 );
 
--- Вставка тестовых данных
 INSERT INTO users (username, email, password_hash) VALUES
 ('john_doe', 'john.doe@example.com', '$2a$10$xJwL5v5Jz7t6V7V7V7V7Ve'),
 ('jane_smith', 'jane.smith@example.com', '$2a$10$xJwL5v5Jz7t6V7V7V7V7Ve'),
