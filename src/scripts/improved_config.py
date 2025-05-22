@@ -15,9 +15,6 @@ DB_CONFIG = {
 }
 
 def get_connection():
-    """
-    Создает и возвращает подключение к базе данных PostgreSQL
-    """
     try:
         conn = psycopg2.connect(**DB_CONFIG)
         logger.info("Database connection established")
@@ -41,9 +38,6 @@ def get_connection():
         raise
 
 def test_connection():
-    """
-    Тестирует подключение к базе данных
-    """
     try:
         with get_connection() as conn:
             cursor = conn.cursor()
