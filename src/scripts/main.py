@@ -4,7 +4,6 @@ import logging
 from improved_config import get_connection
 from model_for import UserInDB, UserCreate, ProjectInDB, ProjectCreate
 
-# Настройка логирования
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -15,7 +14,6 @@ def fetch_all(table: str):
     try:
         with get_connection() as conn:
             cursor = conn.cursor()
-            # Используем правильный регистр для таблиц
             query = f"SELECT * FROM {table}"
             logger.info(f"Executing query: {query}")
             cursor.execute(query)
