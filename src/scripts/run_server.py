@@ -3,7 +3,6 @@ import sys
 from improved_config import test_connection
 
 def main():
-    """Запуск FastAPI сервера с проверкой подключения к БД"""
     
     print("=== Starting FastAPI Server ===")
     
