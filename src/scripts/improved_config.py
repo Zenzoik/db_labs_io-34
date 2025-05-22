@@ -5,7 +5,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# Конфигурация базы данных
 DB_CONFIG = {
     "dbname": os.getenv("DB_NAME", "project_db"),
     "user": os.getenv("DB_USER", "root"),
@@ -27,7 +26,6 @@ def get_connection():
         error_msg = str(e)
         logger.error(f"Failed to connect to database: {error_msg}")
         
-        # Более детальные сообщения об ошибках
         if "password authentication failed" in error_msg:
             raise Exception(f"Ошибка аутентификации: проверьте пароль для пользователя {DB_CONFIG['user']}")
         elif "database" in error_msg and "does not exist" in error_msg:
