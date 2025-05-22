@@ -7,7 +7,6 @@ def main():
     
     print("=== Starting FastAPI Server ===")
     
-    # Проверка подключения к базе данных
     print("\nChecking database connection...")
     if not test_connection():
         print("\n❌ Failed to connect to database!")
@@ -26,7 +25,6 @@ def main():
     print("- ReDoc: http://localhost:8000/redoc")
     print("\nPress CTRL+C to stop the server\n")
     
-    # Запуск сервера
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
